@@ -1,0 +1,29 @@
+
+<input type="text-area" name="serach" [(ngModel)]="search"/>
+<table>
+  <thead>
+    <tr >
+          <th scope="col">ID</th>
+           &nbsp; &nbsp; &nbsp; &nbsp;
+          <th scope="col">Name</th>
+      </tr>
+  </thead>
+
+    <tbody *ngFor="let us of branchSub">
+      <tr id="Tbody">
+          <td id="name">{{us.id}}</td>
+          &nbsp; &nbsp;
+          <td id="loc">{{us.name}}</td>
+          <td><button *ngIf="isdelete" (click)="deleter(us)">Delete</button></td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td><button  *ngIf="isupdate"  (click)="editre(us)">Edit</button></td>
+      </tr>
+      </tbody>
+</table>
+<br>
+<br>
+<div *ngIf="item">
+
+  Name:<input type="text" value=name name="name" [(ngModel)]="name"><br>
+  <button (click)="update(name)">Update</button>
+  </div>

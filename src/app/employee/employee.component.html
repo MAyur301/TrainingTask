@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr >
+          <th scope="col">ID</th>
+           &nbsp; &nbsp; &nbsp; &nbsp;
+          <th scope="col">Name</th>
+      </tr>
+  </thead>
+
+    <tbody *ngFor="let us of employee">
+      <tr id="Tbody">
+          <td id="name">{{us.id}}</td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td id="loc">{{us.name}}</td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td><button *ngIf="isdelete" (click)="deler(us)">Delete</button></td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td><button *ngIf="isupdate" (click)="edit(us)">Edit</button></td>
+      </tr>
+      </tbody>
+
+</table>
+<div *ngIf="item">
+
+  Name:<input type="text" value=name name="name" [(ngModel)]="name"><br>
+  <button (click)="update(name)">Update</button>
+  </div>
+

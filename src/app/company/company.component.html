@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr >
+          <th>Fav</th>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <th scope="col">ID</th>
+           &nbsp; &nbsp; &nbsp; &nbsp;
+          <th scope="col">Name</th>
+      </tr>
+  </thead>
+
+    <tbody *ngFor="let us of company">
+      <tr id="Tbody">
+         &nbsp; &nbsp; &nbsp; &nbsp;
+         <a ><i (click)="onActivated(us)" class="bi bi-star text-warning"></i></a>
+         <!-- <td id="name"><button >Favourite</button></td> -->
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td id="name">{{us.id}}</td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td id="loc">{{us.name}}</td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td><button *ngIf="isupdate" (click)="deletef(us)">Delete</button></td>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <td><button *ngIf="isdelete" (click)="editre(us)">Edit</button></td>
+      </tr>
+      </tbody>
+</table>
+<br>
+<br>
+<div *ngIf="item">
+  Name:<input type="text" value=name name="name" [(ngModel)] = "name"> <br>
+  <button (click)="update(name)">Update</button>
+</div>
